@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="diemKiemTra">điểm kiểm tra<br>
+<input type="text" id="thiGiuaKi">điểm giũa kì<br>
+<input type="text" id="thiCuoiKi">điểm cuối kì<br>
+<button onclick="xepHang()">Xếp hạng</button>
+<p id="xepHang">Xếp Hạng</p>
+<script>
+    function xepHang(){
+        let diemkiemtra = +document.getElementById('diemKiemTra').value;
+        let thigiuaki = +document.getElementById('thiGiuaKi').value;
+        let thicuoiki = +document.getElementById('thiCuoiKi').value;
+        let tongdiem= (diemkiemtra+thigiuaki*2+thicuoiki*3)/6;
+        if (tongdiem<3.5){
+            document.getElementById('xepHang').innerText="xepHang: xếp hạng E";
+        }else
+            if (tongdiem<4.5){
+            document.getElementById('xepHang').innerText="xepHang: xếp hạng D";
+        }else
+            if (tongdiem<6.0){
+            document.getElementById('xepHang').innerText="xepHang: xếp hạng C";
+        }else
+            if (tongdiem<7.5){
+            document.getElementById('xepHang').innerText="xepHang: xếp hạng B";
+        }else
+            document.getElementById('xepHang').innerText="xepHang: xếp hạng A";
+    }
+
+
+
+</script>
+</body>
+</html>
